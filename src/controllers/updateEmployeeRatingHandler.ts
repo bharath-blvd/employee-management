@@ -17,7 +17,7 @@ export const updateEmployeeRating = async (req: Request, res: Response) => {
       return sendForbidden(res, "Only manager can give performance rating");
     }
 
-    if (Object.keys(req.body).length !== 1 || !req.body.rating) {
+    if (Object.keys(req.body).length !== 1 || req.body.rating === undefined) {
       return sendBadRequest(res, "Only rating is allowed");
     }
 
