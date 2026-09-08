@@ -5,6 +5,7 @@ import departmentRoute from "./routes/departmentRoute"
 import authRoute from "./routes/authRoute"
 import leaveRoute from "./routes/leaveRoute"
 import roleRouter from "./routes/roleRoute";
+import hrRoute from "./routes/hrRoute";
 
 const app = express();
 app.use(express.json())
@@ -18,6 +19,8 @@ app.use(employeeRoute);
 app.use(departmentRoute);
 app.use(authRoute)
 app.use(leaveRoute)
+app.use("/hr", hrRoute);
+
 app.use("/", roleRouter);
 
 app.listen(3000,()=>{
