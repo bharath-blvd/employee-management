@@ -62,10 +62,7 @@ export const applyLeave = async (req: Request, res: Response) => {
     // }
 
       try {
-      availableBalance = getAvailableLeaveBalance(
-        employee,
-        leaveType,
-      );
+      availableBalance = getAvailableLeaveBalance(employee,leaveType,);
     } catch {
       return sendBadRequest(res, "Invalid leave type");
     }
@@ -77,11 +74,7 @@ export const applyLeave = async (req: Request, res: Response) => {
 
      // Deduct leave balance
     try {
-      deductLeaveBalance(
-        employee,
-        leaveType,
-        workingDays,
-      );
+      deductLeaveBalance(employee,leaveType,workingDays);
     } catch {
       return sendBadRequest(res, "Invalid leave type");
     }
